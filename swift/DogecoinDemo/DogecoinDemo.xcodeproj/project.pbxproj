@@ -16,6 +16,7 @@
 		7844F8562828BC540043C82A /* DogecoinDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844F8552828BC540043C82A /* DogecoinDemoTests.swift */; };
 		7844F8602828BC540043C82A /* DogecoinDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844F85F2828BC540043C82A /* DogecoinDemoUITests.swift */; };
 		7844F8622828BC540043C82A /* DogecoinDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844F8612828BC540043C82A /* DogecoinDemoUITestsLaunchTests.swift */; };
+		787FD4EE2829450B00CC7EEC /* Dogecoin in Frameworks */ = {isa = PBXBuildFile; productRef = 787FD4ED2829450B00CC7EEC /* Dogecoin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				787FD4EE2829450B00CC7EEC /* Dogecoin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +159,9 @@
 			dependencies = (
 			);
 			name = DogecoinDemo;
+			packageProductDependencies = (
+				787FD4ED2829450B00CC7EEC /* Dogecoin */,
+			);
 			productName = DogecoinDemo;
 			productReference = 7844F83B2828BC520043C82A /* DogecoinDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 7844F8322828BC520043C82A;
+			packageReferences = (
+				787FD4EC2829450B00CC7EEC /* XCRemoteSwiftPackageReference "dogecoin-ios-api" */,
+			);
 			productRefGroup = 7844F83C2828BC520043C82A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -612,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		787FD4EC2829450B00CC7EEC /* XCRemoteSwiftPackageReference "dogecoin-ios-api" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chainx-org/dogecoin-ios-api.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		787FD4ED2829450B00CC7EEC /* Dogecoin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 787FD4EC2829450B00CC7EEC /* XCRemoteSwiftPackageReference "dogecoin-ios-api" */;
+			productName = Dogecoin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7844F8332828BC520043C82A /* Project object */;
 }
