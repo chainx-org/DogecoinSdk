@@ -301,3 +301,35 @@ base_tx = Dogecoin.buildTx(base_tx, signature1, txids[i], indexs[i], 1, redeem_s
 
 5. Repeat steps 2, 3 and 4 until all signatures are placed in the transaction.
 6. When a trustee completes all signatures, the transaction is passed to the next trustee for signning and the process is repeated until the number of trusts with completed signatures reaches a threshold and the transaction construction is complete.
+
+# Calculation of handling fee and change balance
+
+Background: A wants to transfer money to `B 2BTC`, `C 3BTC`
+
+1. Find all unspent transaction txids and balances through the address of A, and sort them from largest to smallest, assuming it is `[(txid1, 4), (txid2, 2), (tixd3, 1), (tixd4, 1) ]`.
+
+2. Accumulate the txids and balance list and find the txid that is greater than the output amount 2+3=5, that is, txid2. If it is not found, it will return that the transfer is not allowed.
+
+3. Extend one bit from txid2 backward, using `[(txid1, 4), (txid2, 2), (tixd3, 1)]` as input. If txid2 is the last one, use `[(txid1, 4), (txid2, 2)]` as input.
+
+4. Use the number of inputs and outputs and the following formula to estimate the number of transaction bytes:
+
+   **Estimation of the number of bytes spent by non-threshold addresses**
+
+   ```
+   70 +180 * input_count(p2pkh) + 34 * output_count
+   ```
+
+   `input_count(taproot_address)` represents the number of input txid when the non-threshold address is spent
+
+   **Estimation of the number of bytes of the threshold address**
+
+   ```
+   105 + 141 * input_count(threshold_address) + 43 * output_count
+   ```
+
+   `input_count(threshold_address)` represents the number of input txid when the threshold address is spent
+
+5. Multiply the number of bytes by the current `FEE RATES` to get the transaction fee.
+
+6. Enter `total amount-(total amount of output + handling fee)` to get `change amount`. If it is negative, there is no change (that is, the change address and amount are not filled in the output list), and the transaction fee becomes `Total input amount-Total amount to output`.
