@@ -117,7 +117,7 @@ public static String buildTx(String base_tx, String signature, String txid, long
 
 phrase -> privkey -> pubkey -> address
 
-​								    pubkeys -> redeem script -> multisig address
+​								-> pubkeys -> redeem script -> multisig address
 
 ### generateMyPrivkey
 
@@ -314,21 +314,21 @@ Background: A wants to transfer money to `B 2BTC`, `C 3BTC`
 
 4. Use the number of inputs and outputs and the following formula to estimate the number of transaction bytes:
 
-   **Estimation of the number of bytes spent by non-threshold addresses**
+   **Estimation of the number of bytes spent by p2pkh addresses**
 
    ```
    70 +180 * input_count(p2pkh) + 34 * output_count
    ```
 
-   `input_count(taproot_address)` represents the number of input txid when the non-threshold address is spent
+   `input_count(p2pkh)` represents the number of input txid when the non-threshold address is spent
 
-   **Estimation of the number of bytes of the threshold address**
+   **Estimation of the number of bytes of the p2sh address**
 
    ```
-   105 + 141 * input_count(threshold_address) + 43 * output_count
+   70 + 1220 * input_count(p2sh) + 34 * output_count
    ```
 
-   `input_count(threshold_address)` represents the number of input txid when the threshold address is spent
+   `input_count(p2sh)` represents the number of input txid when the threshold address is spent
 
 5. Multiply the number of bytes by the current `FEE RATES` to get the transaction fee.
 
