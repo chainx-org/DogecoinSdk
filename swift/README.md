@@ -16,6 +16,20 @@ import Dogecoin
 
 # **Api**
 
+## Error
+
+~~~swift
+public enum DogecoinError: Error {
+    case failPrivkey(message: String)
+    case failPubkey(message: String)
+    case failRedeemScript(message: String)
+    case failRawTx(message: String)
+    case failSighash(message: String)
+    case failSignature(message: String)
+    case failBuildTx(message: String)
+}
+~~~
+
 ## Construct Transaction
 
 ### generateRawTx

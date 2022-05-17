@@ -10,12 +10,12 @@ This repository provides **ios/android** examples and interface documentation fo
 
 # ios
 
-1. **Interface Doc**: Provides function interface parameters, return values and related descriptions
+1. **[Interface Doc](https://github.com/chainx-org/DogecoinSdk/blob/main/swift/README.md)**: Provides function interface parameters, return values and related descriptions
 2. **[Example](https://github.com/chainx-org/DogecoinSdk/blob/main/swift/DogecoinDemo/DogecoinDemo/ViewController.swift#L17-L80)**: Provides an example of completing the generation of p2pkh/p2sh addresses and costs
 
 
 
 # Android
 
-1. **Interface Doc**: Provides function interface parameters, return values and related descriptions
+1. **[Interface Doc](https://github.com/chainx-org/DogecoinSdk/blob/main/java/README.md)**: Provides function interface parameters, return values and related descriptions
 2. **[Example](https://github.com/chainx-org/DogecoinSdk/blob/main/java/DogecoinDemo/app/src/main/java/com/chainx/dogecoindemo/MainActivity.java#L12-L159)**: Provides an example of completing the generation of p2pkh/p2sh addresses and costs
