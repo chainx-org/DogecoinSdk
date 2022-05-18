@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/chainx-org/dogecoin-ios-api.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "2addbf065f392b2508f9ebe8c394cddff033a8a5"
+        "revision" : "75beff8c30c85bbb8dbb5962d59dcff99ff83da1",
+        "version" : "0.1.1"
       }
     }
   ],

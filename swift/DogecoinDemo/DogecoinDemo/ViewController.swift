@@ -37,9 +37,10 @@ class ViewController: UIViewController {
         // step0: generate redeem script using multiple user public keys and threshold
         let threshold: UInt32 = 2
         let redeem_script = try! generateRedeemScript(pubkeys: [pubkey0, pubkey1, pubkey2], threshold: threshold).get()
+        assert(redeem_script=="5221032f7e2f0f3e912bf416234913b388393beb5092418fea986e45c0b9633adefd85210251e0dc3d9709d860c49785fc84b62909d991cffd81592f6994c452438f91b6a22102a09e8182977710bab64472c0ecaf9e52255a890554a00a62facd05c0b13817f853ae", "redeem script not as expected")
         // setp1: Use reddem script to generate addresses
         let multi_addr = generateMultisigAddress(redeem_script: redeem_script, network: "testnet")
-        assert(multi_addr=="2Mw36zb6tAdZ6vjPvS3fXvR1r1wg1K8UXX7", "multi_addr not as expected")
+        assert(multi_addr=="2MsemWYAyMhd3FzfNn6LNv5EmtG9aN1ZyVk", "multi_addr not as expected")
         
         // 4. spent from p2kh address, e.g: addr1
         // step0: enter txid, index, address, amount array to generate raw tx

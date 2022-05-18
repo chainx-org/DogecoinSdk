@@ -6,7 +6,7 @@ This is an api documentation for dogecoin. These help to build dogecoin wallets 
 
 Step 1.  Import project
 
-`File>Add Packages>Github` search [https://github.com/chainx-org/dogecoin-ios-api](https://github.com/chainx-org/dogecoin-ios-api) . The current version is **0.1.0**.
+`File>Add Packages>Github` search [https://github.com/chainx-org/dogecoin-ios-api](https://github.com/chainx-org/dogecoin-ios-api) . The current version is **0.1.1**.
 
 Step 2. Import and use
 
