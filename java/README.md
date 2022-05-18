@@ -19,7 +19,7 @@ Step 2. Add dependencies
 
 ```
 dependencies {
-implementation'com.github.chainx-org:dogecoin-android-api:v0.1.0'
+implementation'com.github.chainx-org:dogecoin-android-api:v0.1.6'
 }
 ```
 
