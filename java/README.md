@@ -325,7 +325,7 @@ Background: A wants to transfer money to `B 2BTC`, `C 3BTC`
    **Estimation of the number of bytes of the p2sh address**
 
    ```
-   70 + 900 * input_count(p2sh) + 34 * output_count
+   70+(49+73*threshold+34*max)* input_count(p2sh)+34*output
    ```
 
    `input_count(p2sh)` represents the number of input txid when the threshold address is spent
